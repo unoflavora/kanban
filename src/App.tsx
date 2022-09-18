@@ -1,10 +1,15 @@
-import { Button } from './components/interactables/button'
+import { ThemeProvider } from 'styled-components'
+import { mainTheme } from './styles/theme'
+import { GlobalStyle } from './GlobalStyle';
+import Home from './components/modules/Home'
 
 function App() {
-
   return (
     <div className="App">
-      <Button typeName="destructive">Button Primary (L)</Button>
+      <GlobalStyle />
+      <ThemeProvider theme={mainTheme}>
+        <Home />
+      </ThemeProvider>
     </div>
   )
 }
