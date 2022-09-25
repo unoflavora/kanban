@@ -1,8 +1,15 @@
 import styled from "styled-components";
-import { Button } from "@interactables/Button";
+import { Button } from "@Interactables/Button";
+import { useContext } from "react";
+// Asset Import Region
 import { ReactComponent as Logo } from "@assets/Logo.svg"
 import { ReactComponent as Dropdown } from "@assets/Dropdown.svg"
 import { ReactComponent as Hamburger } from "@assets/Hamburger.svg"
+import { PopupContext } from '../../context/PopupContext';
+import { Popups } from '../modules/Popups/Popup';
+import { useEffect } from 'react';
+// End Region
+
 
 const Navbar = styled.nav`
     background-color: ${props => props.theme.foreground};
@@ -18,7 +25,7 @@ const Home = styled.div`
 `
 
 const Title = styled.title`
-    font-size: .9rem;
+    font-size: 1rem;
     font-weight: 900;
     padding: 0;
     display: flex;
@@ -33,7 +40,7 @@ const NavbarTitle = styled.div`
 `
 
 const Main = styled.main`
-    height: 80%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -52,8 +59,11 @@ const Options = styled.div`
 `
 
 export default function HomeComponent() {
+    const { popupState, setPopupState } = useContext(PopupContext)
+
     return (
         <Home>
+            {popupState.isVisible && Popups(popupState.type)}
             <Navbar>
                 <NavbarTitle>
                     <Logo />
@@ -70,7 +80,7 @@ export default function HomeComponent() {
 
             <Main>
                 This board is empty. Create a new column to get started
-                <Button typeName="primary">+ Add New Column</Button>
+                <Button onClick={() => { setPopupState({ isVisible: true, type: "Add Task" }) }} typeName="primary">+ Add New Column</Button>
             </Main>
         </Home>
     )

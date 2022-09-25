@@ -10,7 +10,9 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, "src"),
       "@assets": path.resolve(__dirname, "src/assets"),
-      "@interactables": path.resolve(__dirname, "src/components/interactables")
+      "@Modules": path.resolve(__dirname, "src/components/modules"),
+      "@Interactables": path.resolve(__dirname, "src/components/Interactables"),
+      "@types": path.resolve(__dirname, "src/@types")
     }
   }
 })

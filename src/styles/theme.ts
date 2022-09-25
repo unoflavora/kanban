@@ -1,4 +1,5 @@
 export const mainTheme = {
+    font: 'Plus Jakarta Sans',
     foreground: "white",
     background: "rgba(99, 95, 199, 0.1)",
     colors: {

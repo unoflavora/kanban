@@ -26,7 +26,6 @@ const propAttribute = (props: StyledProps<ButtonComponentProps>, attr: keyof typ
 
 export const Button = styled.button<ButtonComponentProps>`
     font-family: ${props => props.children.toString().length < 2 && "sans-serif"};
-    font-weight: 500;
     text-align: center;
     border-radius: 9999px;
     border: 0;
@@ -38,7 +37,7 @@ export const Button = styled.button<ButtonComponentProps>`
     }
 
     @media ${device.mobile} {
-        font-size: ${props => props.fontSize === 'large' ? '1.3rem' : '.8rem'};
+        font-size: ${props => props.fontSize === 'large' ? '1.3rem' : '.9rem'};
         padding: ${props => props.children.toString().length > 2 ? ".8rem 1rem" : ".1rem .8rem"};
     }
 

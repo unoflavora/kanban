@@ -24,8 +24,14 @@
       "@assets/*": [
         "assets/*"
       ],
-      "@interactables/*": [
-        "components/interactables/*"
+      "@Interactables/*": [
+        "components/Interactables/*"
+      ],
+      "@Modules/*": [
+        "components/modules/*"
+      ],
+      "@types/*": [
+        "@types/*"
       ]
     }
   },

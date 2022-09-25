@@ -1,16 +1,20 @@
 import { ThemeProvider } from 'styled-components'
 import { mainTheme } from './styles/theme'
 import { GlobalStyle } from './GlobalStyle';
-import Home from './components/modules/Home'
+import Home from './components/Pages/Home'
+import { PopupProvider } from './context/PopupContext';
+
 
 function App() {
   return (
     <div className="App">
-      <GlobalStyle />
-      <ThemeProvider theme={mainTheme}>
-        <Home />
-      </ThemeProvider>
-    </div>
+      <PopupProvider>
+        <ThemeProvider theme={mainTheme}>
+          <GlobalStyle />
+          <Home />
+        </ThemeProvider>
+      </PopupProvider>
+    </div >
   )
 }
 
